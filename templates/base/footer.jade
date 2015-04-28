@@ -1,0 +1,37 @@
+//- Options:
+//- {
+//-   sentby: 'Lapwing Labs',
+//-   companyurl: 'http://lapwinglabs.com',
+//-   replyto: 'hi@lapwinglabs.com',
+//-   phone: '(415)&nbsp;746-9917',
+//-   location: 'San Francisco, CA',
+//-   zip: '94116'
+//- }
+
+include ../base/paragraph.jade
+
+mixin footer(options)
+  table(id="footer" width="100%" cellpadding="0" cellspacing="0" border="0" align="center")
+    style(type="text/css").
+      #footer .footer_address {
+        margin-top: 0;
+        margin-bottom: 0;
+        padding-top: 0;
+        padding-bottom: 0;
+      }
+    tr
+      td(id="footer_bg")
+        <!--[if mso]>
+        v:rect(stroke="false" color="none" style="position:relative; top:0; left:-24; mso-width-percent:1000; height:14px;")
+          v:fill(xmlns:v="urn:schemas-microsoft-com:vml" type="tile" src="" color="none")
+        <![endif]-->
+    tr
+      td(valign="top" align="center" style="padding: 24px 0px 12px;")
+        div(style="margin: 0 auto;")
+          +paragraph({bgcolor: 'transparent'})(class="footer_address" style="font-size: 12px; line-height: 20px;")
+            | Sent by &nbsp;
+            a(href="#{options.companyurl}" style="font-weight: bold; color: #00A62A;") #{options.sentby}
+            | &nbsp;&bull;&nbsp;
+            a(href="mailto:#{options.replyto}") #{options.replyto}
+          +paragraph({bgcolor: 'transparent'})(class="footer_address" style="font-size: 12px; line-height: 20px;")
+            | #{options.phone} &nbsp;&bull;&nbsp; #{options.location} &nbsp;&bull;&nbsp; #{options.zip}

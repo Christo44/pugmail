@@ -1,0 +1,25 @@
+{
+  "name": "jademail",
+  "version": "0.0.0",
+  "description": "Mandrill email api wrapper with templating support and composable jade mixins for base templates",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://gitlab.com/lapwinglabs/jademail"
+  },
+  "author": "Lapwing Labs",
+  "license": "MIT",
+  "dependencies": {
+    "consolidate": "^0.12.1",
+    "delegates": "^0.1.0",
+    "extend.js": "0.0.2",
+    "inline-styles": "^1.0.0",
+    "prettyjson": "^1.1.0",
+    "subs": "0.0.1",
+    "superagent": "^1.2.0",
+    "yieldly": "0.0.1"
+  }
+}

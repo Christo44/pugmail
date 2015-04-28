@@ -1,0 +1,19 @@
+include ./default-styling.jade
+
+doctype strict
+html(xmlns="http://www.w3.org/1999/xhtml")
+  head
+    meta(http-equiv="Content-Type" content="text/html; charset=utf-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    title
+      block title
+        | Hello! Replace this with the title of your email!
+    block styling
+      +default-styling()
+  body
+    .body(style="width: 100%")
+      span(class="preheader" style="display: none !important; visibility: hidden; opacity: 0; color: #F8F8F8; height: 0; width: 0; font-size: 1px; line-height: 1px;") 
+        block preheader
+          | Hello! This is a text preview of the email that will not be visible in the actual email, but may show up in a clients' listview.
+        | #{date}
+      block content
