@@ -187,7 +187,9 @@ Message.prototype.send = yieldly(function(fn) {
   if (!this.template()) return this.sendHTML(fn);
 
   var self = this;
-  resolveTemplate(this.template(), this.locals, function(err, html) {
+  var locals = this.locals
+  locals.basedir = locals.basedir || process.cwd()
+  resolveTemplate(this.template(), locals, function(err, html) {
     if (err) return fn(err);
     // TODO: replace with an async version
     html = html.toString()
