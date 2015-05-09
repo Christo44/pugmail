@@ -158,6 +158,22 @@ Message.prototype.tag = function(tag) {
 };
 
 /**
+ * google analytics
+ */
+
+Message.prototype.gaDomain = function(domain) {
+  domain = 'string' == typeof domain ? [domain] : domain;
+  this.attrs.google_analytics_domains = this.attrs.google_analytics_domains.concat(domain);
+  return this;
+};
+
+Message.prototype.gaCampaign = function(campaign) {
+  campaign = String(campaign)
+  this.attrs.google_analytics_campaign = campaign;
+  return this;
+};
+
+/**
  * set
  */
 
