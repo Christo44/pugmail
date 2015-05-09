@@ -1,6 +1,6 @@
 {
   "name": "jademail",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Mandrill email api wrapper with templating support and composable jade mixins for base templates",
   "main": "index.js",
   "scripts": {

@@ -78,6 +78,7 @@ function Message(attrs, email) {
   // arrays
   this.attrs.to = [];
   this.attrs.tags = [];
+  this.attrs.google_analytics_domains = [];
 
   // defaults
   this.attrs.inline_css = true;
