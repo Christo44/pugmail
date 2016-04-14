@@ -1,6 +1,6 @@
 {
   "name": "pugmail",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Pug-based templates for composing emails that look great across a lot of clients",
   "main": "index.js",
   "scripts": {
