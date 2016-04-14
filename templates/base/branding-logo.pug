@@ -1,0 +1,11 @@
+mixin branding-logo(options)
+  table(width="100%" cellpadding="0" cellspacing="0" border="0" id="backgroundTable")
+    tr
+      td(valign="top" align="center" width="100%")
+        table(id="header" width="100%" cellpadding="0" cellspacing="0" border="0" align="center")
+          tr
+            td(valign="bottom" style="padding: 30px 0px 30px 0px;" align="center" width="100%")
+              div(style="margin: 0 auto; text-align: center;" width="100%")
+                a(href=options.href)
+                  - var style = 'width: ' + options.width + 'px; height: ' + options.height + 'px;'
+                  img(src=options.src height=options.height width=options.width style=style alt=options.alt)

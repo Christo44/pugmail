@@ -1,0 +1,8 @@
+//- Wrapper for any static content item (e.g. text) that automatically appends an 'invisible' date
+//- This prevents clients like gmail from auto-collapsing repeated emails
+
+mixin paragraph(options)
+  p&attributes(attributes)
+    block
+    - var date = Date.now()
+    span(style="color: transparent; font-size:1px; visibility:hidden; max-width: 1px; overflow: hidden; display: inline-block; line-height: 1px;")= ' s' + date + 't'

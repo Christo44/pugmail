@@ -1,0 +1,41 @@
+//- Options:
+//- {
+//-   width: 450,       // (pixels)
+//-   bgcolor: 'white'
+//- }
+
+mixin card(options)
+  - var maxwidth = options.maxwidth || options.width
+  - var minwidth = options.minwidth || 0
+  - var margin = options.margin ? 'margin: ' + options.margin + ';' : ''
+  - var style = 'max-width: ' + maxwidth + 'px; min-width: ' + minwidth + 'px; margin: 0px auto;'
+  div(style=style)
+    table(id="content" cellpadding="0" cellspacing="0" border="0" align="center" width="100%")
+      tr
+        td(valign="top")
+          <!--[if mso]>
+    table(id="content" cellpadding="0" cellspacing="0" border="0" align="center")
+      tr
+        td(valign="top")
+        center
+          - var style = 'v-text-anchor:middle;width:' + options.width + 'px;height:20px;top:10;position:relative;'
+          v:roundrect(xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" style=style arcsize="30%" stroke="f" fillcolor=options.bgcolor)
+          table(width=options.width cellpadding="0" cellspacing="0" border="0")
+            tr
+              - var style = 'background: ' + options.bgcolor + ';'
+              td(width=options.width style=style)
+                <![endif]-->
+                - var style = 'max-width: ' + maxwidth + 'px; margin: 0 auto;'
+                div(style=style)
+                  - var style = 'background:' + options.bgcolor + '; border-radius: 0.5em; ' + margin
+                  div(class="card" style=style)
+                    table(valign="top" cellpadding="0" cellspacing="0" border="0" align="center" width="100%")
+                      tr
+                        - var style = 'padding:' + options.padding
+                        td(style=style)
+                          block
+                <!--[if mso]>
+          - var style = 'v-text-anchor:middle; width:' + options.width + 'px; height:20px; top:-10px; position:relative;'
+          v:roundrect(xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" style=style arcsize="30%" stroke="f" fillcolor=options.bgcolor)
+        td(valign="top")
+          <![endif]-->

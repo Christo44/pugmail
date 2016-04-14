@@ -1,0 +1,74 @@
+//- Options:
+//- {
+//-   height: 60,
+//-   width: 300,
+//-   minwidth: 224,
+//-   bgcolor: 'black',
+//-   textcolor: 'white',
+//-   url: 'http://google.com',
+//-   text: 'Click Me!'
+//- }
+
+mixin button(options)
+  - console.log(options)
+  div
+    <!--[if mso]>
+    div
+      center
+        - var style = 'height:' + options.height + 'px; v-text-anchor:middle; width:' + options.width + 'px;'
+        v:roundrect(xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href=options.url style=style arcsize="10%" stroke="f" fillcolor=options.bgcolor)
+          w:anchorlock
+          - var style = 'color:' + options.textcolor + '; font-size:16px; font-weight:bold; letter-spacing:2px; font-family: sans-serif;'
+          center(style=style) #{options.text}
+      <![endif]-->
+
+      <![if !IE]>
+      <![if !mso]>
+      style(type="text/css").
+        .button {
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        border-radius: 5px;
+        color: #{options.textcolor};
+        margin: auto;
+        background: #{options.bgcolor};
+        }
+
+        table.buttonContainer {
+        max-width: #{options.width}px;
+        min-width: #{options.minwidth}px;
+        }
+      center
+        br
+        table(width="100%" cellspacing="0" cellpadding="0" class="buttonContainer")
+          tr
+            - var style = 'display: block; margin: auto; padding: auto; max-width: ' + options.width + 'px; min-width: ' + options.minwidth + 'px'
+            td(align="center" height=options.height valign="middle" style=style class="button")
+              - var style = 'font-size:16px; font-weight: bold; text-decoration: none; line-height:' + options.height + 'px; width:100%; letter-spacing: 2px; display:inline-block; background: ' + options.bgcolor + ';'
+              a(href=options.url class="button" style=style)
+                - var style = 'color: ' + options.textcolor + ';'
+                span(style=style) #{options.text}
+        br
+      <![endif]>
+      <![endif]>
+
+      <!--[if IE]>
+      style(type="text/css").
+        .IEButton {
+        background: #{options.bgcolor};
+        margin: auto;
+        padding: auto;
+        }
+
+      center
+        - var style = 'width: ' + options.width + 'px; min-width: ' + options.minwidth + 'px; line-height: 1.7em;'
+        table(cellspacing="0" cellpadding="0" style=style)
+          tr
+            td(class="IEbutton" align="center" height=options.height valign="middle" bgcolor=options.bgcolor)
+              a(href=options.url style="font-size:16px; font-weight: bold; text-decoration: none; letter-spacing: 1.5px;")
+                - var style = 'color: ' + options.textcolor + ';'
+                span(style=style) #{options.text}
+      <![endif]-->
+
+      <!--[if mso]>
+    <![endif]-->
