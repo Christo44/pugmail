@@ -25,17 +25,18 @@ mixin button(options)
       <![if !mso]>
       style(type="text/css").
         .button {
-        -webkit-border-radius: 5px;
-        -moz-border-radius: 5px;
-        border-radius: 5px;
-        color: #{options.textcolor};
-        margin: auto;
-        background: #{options.bgcolor};
+          -webkit-border-radius: 5px;
+          -moz-border-radius: 5px;
+          border-radius: 5px;
+          color: #{options.textcolor};
+          margin: auto;
+          background: #{options.bgcolor};
         }
 
         table.buttonContainer {
-        max-width: #{options.width}px;
-        min-width: #{options.minwidth}px;
+          max-width: #{options.width}px;
+          min-width: #{options.minwidth}px;
+          margin: auto;
         }
       center
         br
